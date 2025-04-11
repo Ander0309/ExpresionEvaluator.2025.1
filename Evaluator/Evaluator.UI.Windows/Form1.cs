@@ -43,7 +43,7 @@ namespace Evaluator.UI.Windows
         {
             txtDisplay.Text += "7";
         }
-
+        
         private void btn8_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "8";
@@ -74,6 +74,11 @@ namespace Evaluator.UI.Windows
             txtDisplay.Text += "*";
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
+        }
+
         private void btnPlus_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "+";
@@ -82,11 +87,6 @@ namespace Evaluator.UI.Windows
         private void btnMinus_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "-";
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -111,12 +111,7 @@ namespace Evaluator.UI.Windows
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += $"={FunctionEvaluator.Evaluate(txtDisplay)}";
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            txtDisplay.Text += $"={FunctionEvaluator.Evalute(txtDisplay.Text)}";
         }
     }
 }
